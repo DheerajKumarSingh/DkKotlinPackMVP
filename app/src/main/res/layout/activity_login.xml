@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditText
+            android:id="@+id/userName"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"
+            android:hint="user id"
+            android:autofillHints="122334"/>
+    <EditText
+            android:id="@+id/userPass"
+            app:layout_constraintTop_toBottomOf="@+id/userName"
+            android:layout_width="match_parent"
+            android:hint="password"
+            android:layout_height="50dp"
+            android:orientation="vertical"
+            android:autofillHints="123456"/>
+
+    <Button
+            android:id="@+id/clickUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:onClick="clickUser"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userPass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.0" android:focusable="true"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
