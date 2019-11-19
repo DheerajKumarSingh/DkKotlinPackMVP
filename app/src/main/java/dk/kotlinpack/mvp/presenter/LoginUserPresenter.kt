@@ -19,6 +19,7 @@ class LoginUserPresenter @Inject constructor(private val api: NetWorkAPI,
     fun injectView(view: View) {
         this.view = view
     }
+
     fun getUserInfo(username: String) {
         view.loading()
         disposable.add(api.getUser(username)

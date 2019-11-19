@@ -3,6 +3,7 @@ import android.os.Bundle
 import android.support.annotation.NonNull
 import android.support.design.widget.NavigationView
 import android.support.v7.app.ActionBarDrawerToggle
+import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
 import dk.kotlinpack.R
@@ -55,7 +56,10 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (t!!.onOptionsItemSelected(item)) true else super.onOptionsItemSelected(item)
+        Log.v("option","option")
+        return if (t!!.onOptionsItemSelected(item)) true
+           else
+            super.onOptionsItemSelected(item)
     }
 
 /*  manage actionbutton & home button

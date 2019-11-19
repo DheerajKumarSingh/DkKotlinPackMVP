@@ -16,7 +16,7 @@ abstract class BaseActivity : AppCompatActivity(), BackHandlerInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-   //     getSupportFragmentManager().addOnBackStackChangedListener(this)
+       //getSupportFragmentManager().addOnBackStackChangedListener(this)
     }
 
     override fun setSelectedFragment(baseFragment: BaseFragment) {
@@ -35,7 +35,7 @@ abstract class BaseActivity : AppCompatActivity(), BackHandlerInterface {
         if (fragment == null) {
             try {
                 fragment = fragmentClass.newInstance()
-                fragment!!.arguments = bundle
+                fragment.arguments = bundle
             } catch (e: InstantiationException) {
                 throw RuntimeException("New Fragment should have been created", e)
             } catch (e: IllegalAccessException) {
@@ -49,7 +49,7 @@ abstract class BaseActivity : AppCompatActivity(), BackHandlerInterface {
             android.R.anim.slide_out_right
         )
         fragmentTransaction.replace(
-            dk.kotlinpack.R.id.container, fragment,
+            dk.kotlinpack.R.id.container, fragment!!,
             fragmentClass.simpleName
         )
         if (addToBackStack) {
